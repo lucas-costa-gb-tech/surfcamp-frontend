@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import "@/sass/main.scss";
 
 export const metadata: Metadata = {
-  title: "Surfcamp",
-  description: "Surfcamp website",
+  title: "Surf Camp",
+  description: "Surf Camp website",
 };
 
 export default function RootLayout({
