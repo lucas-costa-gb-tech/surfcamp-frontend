@@ -1,18 +1,18 @@
-import Image from "next/image";
-import Link from "next/link";
-import { routes } from "@/routes/constants";
+import Image from 'next/image';
+import Link from 'next/link';
+import { routes } from '@/routes/constants';
 
 export const Header = () => (
-  <header className="header">
+  <header className='header'>
     <Image
-      src="/logo.svg"
-      alt="Surf Camp logo"
+      src='/logo.svg'
+      alt='Surf Camp logo'
       width={50}
       height={80}
       priority
     />
     <nav>
-      <ul className="header__nav">
+      <ul className='header__nav'>
         {routes.map(({ path, label }) => (
           <li key={path}>
             <Link href={path}>
@@ -22,8 +22,8 @@ export const Header = () => (
         ))}
       </ul>
     </nav>
-    <Link href="/events">
-      <button className="btn btn--black btn--small">BOOK NOW</button>
+    <Link href='/events'>
+      <button className='btn btn--black btn--small'>BOOK NOW</button>
     </Link>
   </header>
 );
