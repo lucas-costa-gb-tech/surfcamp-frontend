@@ -23,7 +23,7 @@ export const Header = () => (
       </ul>
     </nav>
     <Link href='/events'>
-      <button className='btn btn--black btn--small'>BOOK NOW</button>
+      <button type='button' className='btn btn--black btn--small'>BOOK NOW</button>
     </Link>
   </header>
 );
