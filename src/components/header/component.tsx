@@ -1,25 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-
-type Route = {
-  path: string;
-  label: string;
-};
-
-const routes: Array<Route> = [
-  {
-    path: '/',
-    label: 'the camp.',
-  },
-  {
-    path: '/experience',
-    label: 'the experience.',
-  },
-  {
-    path: '/blog',
-    label: 'the blog.',
-  },
-];
+import { routes } from "@/routes/constants";
 
 export const Header = () => (
   <header className="header">
