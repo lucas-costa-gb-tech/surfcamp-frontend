@@ -24,11 +24,10 @@ const routes: Array<Route> = [
 export const Header = () => (
   <header className="header">
     <Image
-      className="header__logo"
       src="/logo.svg"
       alt="Surf Camp logo"
-      width={125}
-      height={190}
+      width={50}
+      height={80}
       priority
     />
     <ul className="header__nav">
