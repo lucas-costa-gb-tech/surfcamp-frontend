@@ -11,15 +11,17 @@ export const Header = () => (
       height={80}
       priority
     />
-    <ul className="header__nav">
-      {routes.map(({ path, label }) => (
-        <li key={path}>
-          <Link href={path}>
-            <h5>{label}</h5>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <nav>
+      <ul className="header__nav">
+        {routes.map(({ path, label }) => (
+          <li key={path}>
+            <Link href={path}>
+              <h5>{label}</h5>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
     <Link href="/events">
       <button className="btn btn--black btn--small">BOOK NOW</button>
     </Link>
