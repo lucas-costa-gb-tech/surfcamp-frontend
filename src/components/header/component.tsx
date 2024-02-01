@@ -2,9 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { routes } from '@/routes/constants';
 
-export const Header = () => (
-  <header className='header'>
+import type { HeaderProps } from './types';
+
+export const Header = ({ baseColor }: HeaderProps) => (
+  <header className={`header header--${baseColor}`}>
     <Image
+      className='header__logo'
       src='/logo.svg'
       alt='Surf Camp logo'
       width={50}
