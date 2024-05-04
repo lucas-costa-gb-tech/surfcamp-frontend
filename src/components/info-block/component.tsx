@@ -1,3 +1,6 @@
+'use client';
+
+import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 import Image from 'next/image';
 
 import type { InfoBlockProps } from './types';
@@ -14,7 +17,12 @@ export const InfoBlock = ({ baseColor, isReversed, imageSource, headline, text }
     />
     <div className='info__text'>
       <h2 className='info__headline'>{headline}</h2>
-      <p className='copy'>{text}</p>
+      <BlocksRenderer
+        content={text}
+        blocks={{
+          paragraph: ({ children }) => <p className='copy'>{children}</p>,
+        }}
+      />
       <button type='button' className={`btn btn--${baseColor} btn--small`}>BOOK NOW</button>
     </div>
   </div>
