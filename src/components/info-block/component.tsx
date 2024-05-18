@@ -23,7 +23,7 @@ export const InfoBlock = ({ baseColor, isReversed, imageSource, headline, text }
           paragraph: ({ children }) => <p className='copy'>{children}</p>,
         }}
       />
-      <button type='button' className={`btn btn--${baseColor} btn--small`}>BOOK NOW</button>
+      <button type='button' className={`btn btn--${baseColor} btn--small`}>Book now</button>
     </div>
   </div>
 );
