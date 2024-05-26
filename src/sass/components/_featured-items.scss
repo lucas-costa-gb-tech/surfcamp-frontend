@@ -27,13 +27,8 @@
   &__article-img {
     width: 100%;
     height: 35.5rem;
-
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 3.5rem 3.5rem 0 0;
-    }
+    object-fit: cover;
+    border-radius: 3.5rem 3.5rem 0 0;
   }
 
   &__article-text {
