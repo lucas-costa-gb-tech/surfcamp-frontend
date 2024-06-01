@@ -1,5 +1,3 @@
-export type CardProps = {
-  title: string;
-  date?: string;
-  imageSource: string;
-};
+import type { BlogArticleAttributes } from '@/services/blog-articles';
+
+export type CardProps = BlogArticleAttributes;

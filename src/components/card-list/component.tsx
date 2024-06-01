@@ -6,8 +6,8 @@ export const CardList = ({ title, items }: CardListProps) => (
   <section className='featured-items'>
     <h3 className='featured-items__headline'>{title}</h3>
     <div className='featured-items__container'>
-      {items.map(({ id, ...rest }) => (
-        <Card key={id} {...rest} />
+      {items.map(({ id, attributes }) => (
+        <Card key={id} {...attributes} />
       ))}
     </div>
   </section>

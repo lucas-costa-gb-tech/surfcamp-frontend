@@ -1,24 +1,20 @@
 import { FeaturedArticle } from '@/components/featured-article';
 import { NewsletterSubscription } from '@/components/newsletter-subscription';
-import { CardList, type CardItem } from '@/components/card-list';
+import { CardList } from '@/components/card-list';
+import { getBlogArticles } from '@/services/blog-articles';
 
-const latestArticles: Array<CardItem> = [
-  {
-    id: '1',
-    title: 'surfboard shaping and design behind the scenes of crafting the perfect board',
-    date: 'Monday, June 05, 2023',
-    imageSource: '/article-1.webp',
-  },
-];
+const Blog = async () => {
+  const { data: blogArticles } = await getBlogArticles();
 
-const Blog = () => (
-  <>
-    <main className='blog-page'>
-      <FeaturedArticle />
-      <NewsletterSubscription />
-      <CardList title='Our lastest articles' items={latestArticles} />
-    </main>
-  </>
-);
+  return (
+    <>
+      <main className='blog-page'>
+        <FeaturedArticle />
+        <NewsletterSubscription />
+        <CardList title='Our lastest articles' items={blogArticles} />
+      </main>
+    </>
+  );
+};
 
 export default Blog;

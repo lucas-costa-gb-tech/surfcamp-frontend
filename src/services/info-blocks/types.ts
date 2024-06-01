@@ -1,4 +1,4 @@
-import { type BlocksContent } from '@strapi/blocks-react-renderer';
+import type { BlocksContent } from '@strapi/blocks-react-renderer';
 
 export type InfoBlockAttributes = {
   baseColor: string;

@@ -1,10 +1,6 @@
-import type { CardProps } from '@/components/card';
-
-export type CardItem = CardProps & {
-  id: string;
-};
+import type { BlogArticleData } from '@/services/blog-articles';
 
 export type CardListProps = {
   title: string;
-  items: Array<CardItem>;
+  items: Array<BlogArticleData>;
 };

@@ -1,4 +1,4 @@
-import { type GetInfoBlocksResponse} from './types';
+import type { GetInfoBlocksResponse} from './types';
 
 export const getInfoBlocks = async () => {
   const response = await fetch(`${process.env.STRAPI_API}/api/info-blocks?populate=image`, {
