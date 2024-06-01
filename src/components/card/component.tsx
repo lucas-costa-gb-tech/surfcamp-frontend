@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import Image from 'next/image';
 
 import type { CardProps } from './types';
 
-export const Card = ({ title, date, imageSource }: CardProps) => (
-  <div className='featured-items__article'>
+export const Card = ({ title, slug, date, imageSource }: CardProps) => (
+  <Link className='featured-items__article' href={`/blog/${slug}`}>
     <Image
       className='featured-items__article-img'
       src={imageSource}
@@ -16,5 +17,5 @@ export const Card = ({ title, date, imageSource }: CardProps) => (
       <h5>{title}</h5>
       {date && <p className='copy-small'>{date}</p>}
     </div>
-  </div>
+  </Link>
 );
