@@ -1,6 +1,6 @@
-import type { BlogArticleData } from '@/services/blog-articles';
+import type { ReactNode } from 'react';
 
 export type CardListProps = {
   title: string;
-  items: Array<BlogArticleData>;
+  children: ReactNode;
 };
