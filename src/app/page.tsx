@@ -2,7 +2,7 @@ import { Header } from '@/components/header';
 import { Cover } from '@/components/cover';
 import { InfoBlock } from '@/components/info-block';
 import { Footer } from '@/components/footer';
-import { getInfoBlocks } from '@/services/content';
+import { getInfoBlocks } from '@/services/info-blocks';
 
 const Home = async () => {
   const { data: infoBlocks } = await getInfoBlocks();
