@@ -8,23 +8,21 @@ const Blog = async () => {
   const { data: blogArticles } = await getBlogArticles();
 
   return (
-    <>
-      <main className='blog-page'>
-        <FeaturedArticle />
-        <NewsletterSubscription />
-        <CardList title='Our lastest articles'>
-          {blogArticles.map(({ id, attributes }) => (
-            <Card
-              key={id}
-              title={attributes.title}
-              slug={attributes.slug}
-              date={new Intl.DateTimeFormat('en', { dateStyle: 'full' }).format(new Date(attributes.date))}
-              imageSource={`${process.env.STRAPI_API}${attributes.image.data.attributes.url}`}
-            />
-          ))}
-        </CardList>
-      </main>
-    </>
+    <main className='blog-page'>
+      <FeaturedArticle />
+      <NewsletterSubscription />
+      <CardList title='Our lastest articles'>
+        {blogArticles.map(({ id, attributes }) => (
+          <Card
+            key={id}
+            title={attributes.title}
+            slug={attributes.slug}
+            date={new Intl.DateTimeFormat('en', { dateStyle: 'full' }).format(new Date(attributes.date))}
+            imageSource={`${process.env.STRAPI_API}${attributes.image.data.attributes.url}`}
+          />
+        ))}
+      </CardList>
+    </main>
   );
 };
 

@@ -1,5 +1,3 @@
-import { Card } from '@/components/card';
-
 import type { CardListProps } from './types';
 
 export const CardList = ({ title, children }: CardListProps) => (
