@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-export type CardListProps = {
+export type CardListProps = Readonly<{
   title: string;
   children: ReactNode;
-};
+}>;
