@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 import type { CardProps } from './types';
 
-export const Card = ({ title, slug, date, imageSource }: CardProps) => (
-  <Link className='featured-items__article' href={`/blog/${slug}`}>
+export const Card = ({ id, title, date, imageSource }: CardProps) => (
+  <Link className='featured-items__article' href={`/blog/${id}`}>
     <Image
       className='featured-items__article-img'
       src={imageSource}

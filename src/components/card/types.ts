@@ -1,6 +1,6 @@
 export type CardProps = Readonly<{
+  id: number;
   title: string;
-  slug: string;
   date: string;
   imageSource: string;
 }>;
