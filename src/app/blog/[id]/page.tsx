@@ -7,7 +7,7 @@ import type { BlogArticleProps } from './types';
 export const generateStaticParams = async () => {
   const { data: blogArticles } = await getBlogArticles();
  
-  return blogArticles.map(({ id }) => ({ id: String(id) }))
+  return blogArticles.map(({ id }) => ({ id: String(id) }));
 };
 
 const BlogArticle = async ({ params }: BlogArticleProps) => {
