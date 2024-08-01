@@ -1,21 +1,24 @@
 'use client';
 import { useState, type ChangeEvent, type FormEvent } from 'react';
+import { postNewsletterSignup } from '@/services/newsletter-signups';
 
 export const NewsletterSubscription = () => {
   const [email, setEmail] = useState<string>('');
+  const [hasSignup, setHasSignup] = useState<boolean>(false);
 
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
   };
 
-  const handleNewsletterSubscriptionSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleNewsletterSubscriptionSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    await postNewsletterSignup(email);
+    setHasSignup(true);
   };
 
   return (
     <section className='newsletter'>
-      {/* TODO: Implementar validação de email e envio para o Strapi */}
-      {false ? (
+      {hasSignup ? (
         <h4 className='newsletter__thanks'>
           thank you for signing up for the newsletter
         </h4>
