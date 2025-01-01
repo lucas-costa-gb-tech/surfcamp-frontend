@@ -6,7 +6,7 @@ import { postParticipant } from '@/services/participants';
 
 import type { SignupFormProps } from './types';
 
-export const SignupForm = ({ headline, content }: SignupFormProps) => {
+export const SignupForm = ({ headline, content, eventId }: SignupFormProps) => {
   const [firstName, setFirstName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -26,7 +26,7 @@ export const SignupForm = ({ headline, content }: SignupFormProps) => {
 
   const handleSignupFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await postParticipant(firstName, lastName, email, '1');
+    await postParticipant(firstName, lastName, email, eventId);
     setHasSignup(true);
   };
 

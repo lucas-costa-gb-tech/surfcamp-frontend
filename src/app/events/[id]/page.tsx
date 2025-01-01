@@ -2,10 +2,18 @@ import { BlocksRenderer } from '@strapi/blocks-react-renderer';
 
 import { Header } from '@/components/header';
 import { SignupForm } from '@/components/signup-form';
-import { getEvent } from '@/services/events';
+import { getEvents, getEvent } from '@/services/events';
 
-const Events = async () => {
-  const { data: event } = await getEvent('1');
+import type { EventDetailsProps } from './types';
+
+export const generateStaticParams = async () => {
+  const { data: events } = await getEvents();
+ 
+  return events.map(({ id }) => ({ id: String(id) }));
+};
+
+const EventDetails = async ({ params }: EventDetailsProps) => {
+  const { data: event } = await getEvent(params.id);
 
   return (
     <>
@@ -14,11 +22,11 @@ const Events = async () => {
         <SignupForm
           headline={event.attributes.name}
           content={<BlocksRenderer content={event.attributes.description} />}
-          eventId='1'
+          eventId={params.id}
         />
       </main>
     </>
   );
 };
 
-export default Events;
+export default EventDetails;
