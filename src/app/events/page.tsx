@@ -12,9 +12,13 @@ const Events = async () => {
       <Header baseColor='black' />
       <main className='events-page'>
         <SignupForm
+          eventId='1'
           headline={event.attributes.name}
           content={<BlocksRenderer content={event.attributes.description} />}
-          eventId='1'
+          pricing={{
+            single: event.attributes.singlePrice,
+            shared: event.attributes.sharedPrice,
+          }}
         />
       </main>
     </>

@@ -6,7 +6,7 @@ import { postParticipant } from '@/services/participants';
 
 import type { SignupFormProps } from './types';
 
-export const SignupForm = ({ headline, content, eventId }: SignupFormProps) => {
+export const SignupForm = ({ headline, content, eventId, pricing }: SignupFormProps) => {
   const [firstName, setFirstName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -65,6 +65,11 @@ export const SignupForm = ({ headline, content, eventId }: SignupFormProps) => {
           <button type='submit' className='btn btn--medium btn--turquoise'>
             Stay in touch!
           </button>
+          <div className='signup-form__pricing'>
+            <h3>Pricing</h3>
+            <p className='copy'>Single Room: <span className='bold'>${pricing.single} per person</span></p>
+            <p className='copy'>Shared Room: <span className='bold'>${pricing.single} per person</span></p>
+          </div>
         </form>
       )}
     </section>

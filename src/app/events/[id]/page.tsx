@@ -20,9 +20,13 @@ const EventDetails = async ({ params }: EventDetailsProps) => {
       <Header baseColor='black' />
       <main className='events-page'>
         <SignupForm
+          eventId={params.id}
           headline={event.attributes.name}
           content={<BlocksRenderer content={event.attributes.description} />}
-          eventId={params.id}
+          pricing={{
+            single: event.attributes.singlePrice,
+            shared: event.attributes.sharedPrice,
+          }}
         />
       </main>
     </>
