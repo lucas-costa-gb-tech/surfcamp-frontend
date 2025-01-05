@@ -7,6 +7,13 @@ export type EventAttributes = {
   endingDate: string;
   singlePrice: number;
   sharedPrice: number;
+  image: {
+    data: {
+      attributes: {
+        url: string;
+      };
+    };
+  };
 };
 
 export type EventData = {

@@ -68,7 +68,7 @@ export const SignupForm = ({ headline, content, eventId, pricing }: SignupFormPr
           <div className='signup-form__pricing'>
             <h3>Pricing</h3>
             <p className='copy'>Single Room: <span className='bold'>${pricing.single} per person</span></p>
-            <p className='copy'>Shared Room: <span className='bold'>${pricing.single} per person</span></p>
+            <p className='copy'>Shared Room: <span className='bold'>${pricing.shared} per person</span></p>
           </div>
         </form>
       )}

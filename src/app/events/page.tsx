@@ -1,25 +1,26 @@
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
-
+import { CardList } from '@/components/card-list';
+import { Card } from '@/components/card';
 import { Header } from '@/components/header';
-import { SignupForm } from '@/components/signup-form';
-import { getEvent } from '@/services/events';
+import { getEvents } from '@/services/events';
 
 const Events = async () => {
-  const { data: event } = await getEvent('1');
+  const { data: events } = await getEvents();
 
   return (
     <>
       <Header baseColor='black' />
       <main className='events-page'>
-        <SignupForm
-          eventId='1'
-          headline={event.attributes.name}
-          content={<BlocksRenderer content={event.attributes.description} />}
-          pricing={{
-            single: event.attributes.singlePrice,
-            shared: event.attributes.sharedPrice,
-          }}
-        />
+        <CardList title='Upcomings events'>
+        {events.map(({ id, attributes }) => (
+          <Card
+            key={id}
+            id={id}
+            destineRoute='events'
+            title={attributes.name}
+            imageSource={`${process.env.STRAPI_API}${attributes.image.data.attributes.url}`}
+          />
+        ))}
+      </CardList>
       </main>
     </>
   );

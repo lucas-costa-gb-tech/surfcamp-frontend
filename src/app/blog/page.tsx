@@ -16,6 +16,7 @@ const Blog = async () => {
           <Card
             key={id}
             id={id}
+            destineRoute='blog'
             title={attributes.title}
             date={new Intl.DateTimeFormat('en', { dateStyle: 'full' }).format(new Date(attributes.date))}
             imageSource={`${process.env.STRAPI_API}${attributes.image.data.attributes.url}`}
